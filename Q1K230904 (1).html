@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            background-color: rgb(255, 165, 0);
+            width: 30px;
+            height:28px;
+            border-style:solid;
+            border-width: 0.01px;
+        }
+        .box1:hover{
+            cursor: pointer;
+            background-color: rgb(255, 179, 36);
+        }
+        .box2:hover{
+            cursor: pointer;
+            background-color: rgb(128, 123, 122);
+        }
+        .box3:hover{
+            cursor: pointer;
+            background-color: rgb(128, 123, 122);
+        }
+        .b{
+            display: flex;
+            border-style: none;
+        }
+        #box{
+            text-align: end;
+            font-size: 26px;
+           width: 116px;
+           height: 49px;
+           background-color: black;
+           color: white;
+           border-style: none;
+        }
+        .box2{
+            background-color: rgb(114, 110, 109);
+            color: white;
+            width: 30px;
+            height:auto;
+            border-style:solid;
+            border-width: 0.01px;
+        }
+        .box3{
+            background-color: rgb(114, 110, 109);
+            color: white;
+            width: 30px;
+            height:auto;
+            border-style:solid;
+            border-width: 0.01px;
+        }
+        .e1{
+            width: 60px;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+    <input id="box" readonly>
+    <div class="b">
+    <br>
+    <button class="box3" onclick="c()" id="c">C</button>
+    <button class="box3" onclick="" id="+/-">+/-</button>
+    <button class="box3" onclick="append('%')" id="%">%</button>
+    <button class="box1" onclick="append('/')" id="/">/</button>
+</div>
+    <div class="b">
+    <br>
+    <button class="box2" onclick="append('7')" id="7">7</button>
+    <button class="box2" onclick="append('8')" id="8">8</button>
+    <button class="box2" onclick="append('9')" id="9">9</button>
+    <button class="box1" onclick="append('*')" id="x">*</button>
+</div>
+    <div class="b">
+    <br>
+    <button class="box2" onclick="append('4')" id="4">4</button>
+    <button class="box2" onclick="append('5')" id="5">5</button>
+    <button class="box2" onclick="append('6')" id="6">6</button>
+    <button class="box1" onclick="append('-')" id="-">-</button>
+</div>
+<div class="b">
+    <br>
+    <button class="box2" onclick="append('1')" id="1">1</button>
+    <button class="box2" onclick="append('2')" id="2">2</button>
+    <button class="box2" onclick="append('3')" id="3">3</button>
+    <button class="box1" onclick="append('+')" id="+">+</button>
+</div>
+<div class="b">
+    <br>
+    <button class="box2 e1" onclick="append('0')" id="0">0</button>
+    <button class="box3" onclick="append('.')" id=".">.</button>
+    <button class="box1" onclick="calcu()" id="=">=</button>
+</div>
+    <script>
+        document.getElementById('box').value=0;
+        function append(val){
+            if(document.getElementById('box').value==0){
+                document.getElementById('box').value='';
+            }
+            document.getElementById('box').value+=val;
+        }
+        function c(){
+            document.getElementById('box').value=0;
+        }
+        function calcu(){
+            result=document.getElementById('box');
+            result=eval(result.value);
+            document.getElementById('box').value=result;
+        }
+    </script>
+</body>
+</html>
